@@ -4,6 +4,17 @@
 
 Откройте `index.html` напрямую в браузере. Сборщик, CDN и внешние UI-библиотеки не требуются.
 
+## Публикация на GitHub Pages
+
+Публикуйте всю папку проекта целиком, а не только `index.html`. В репозитории должны лежать:
+
+- `index.html`
+- `.nojekyll`
+- папки `css/`, `js/`, `assets/`
+- `privacy.html`, `robots.txt`, `sitemap.xml`
+
+Если на GitHub Pages виден только черный текст на белом фоне, значит страница открылась без CSS. Проверьте, что файлы `css/reset.css`, `css/variables.css`, `css/style.css` и `css/responsive.css` есть в опубликованной ветке рядом с `index.html`.
+
 ## Замена заглушек
 
 - В `index.html`, `privacy.html`, `robots.txt` и `sitemap.xml` замените `example.ru`, реквизиты, адреса, телефон и email на реальные.

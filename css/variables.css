@@ -1,0 +1,20 @@
+:root {
+  --color-bg: #0B1117;
+  --color-bg-secondary: #111A24;
+  --color-card: #16212D;
+  --color-text: #F3F6F8;
+  --color-text-muted: #AAB4C0;
+  --color-border: #263747;
+  --color-accent: #00C2A8;
+  --color-accent-blue: #2F80ED;
+  --color-warning: #F2C94C;
+  --color-error: #EB5757;
+  --color-success: #27AE60;
+  --font-main: 'Inter', 'Roboto', Arial, sans-serif;
+  --container-width: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: 0.25s ease;
+  --header-height: 76px;
+}
