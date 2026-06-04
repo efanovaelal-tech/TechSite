@@ -53,14 +53,10 @@
 
   .hero {
     min-height: calc(100vh - var(--header-height));
-  }
-
-  .hero::before {
-    background: linear-gradient(90deg, rgba(11, 17, 23, 0.96), rgba(11, 17, 23, 0.60), rgba(11, 17, 23, 0.88));
-  }
-
-  .hero-bg-image {
-    object-position: center;
+    background:
+      linear-gradient(90deg, rgba(11, 17, 23, 0.96), rgba(11, 17, 23, 0.60), rgba(11, 17, 23, 0.88)),
+      url("../assets/images/hero-bg.jpg") center / cover no-repeat,
+      var(--color-bg-secondary);
   }
 
   .hero-cards,

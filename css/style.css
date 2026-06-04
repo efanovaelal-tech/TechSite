@@ -218,29 +218,15 @@ p {
   overflow: hidden;
   min-height: auto;
   padding: 70px 0 48px;
-  background: var(--color-bg-secondary);
-}
-
-.hero::before {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(11, 17, 23, 0.72), rgba(11, 17, 23, 0.68), rgba(11, 17, 23, 0.90));
-  content: "";
-}
-
-.hero-bg-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 62% center;
+  background:
+    linear-gradient(180deg, rgba(11, 17, 23, 0.72), rgba(11, 17, 23, 0.68), rgba(11, 17, 23, 0.90)),
+    url("../assets/images/hero-bg.jpg") 62% center / cover no-repeat,
+    var(--color-bg-secondary);
 }
 
 .hero .container {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .hero-grid {
