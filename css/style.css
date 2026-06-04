@@ -6,14 +6,27 @@ body {
   line-height: 1.55;
 }
 
+h1,
+h2,
+h3,
+p,
+a,
+button,
+li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 body.modal-open,
 body.menu-open {
   overflow: hidden;
 }
 
 .container {
-  width: min(100% - 32px, var(--container-width));
+  width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 .section {
@@ -72,6 +85,8 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  min-width: 0;
   min-height: 44px;
   padding: 12px 18px;
   border: 1px solid var(--color-border);
@@ -80,6 +95,7 @@ p {
   color: var(--color-text);
   font-weight: 700;
   text-align: center;
+  white-space: normal;
   transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
@@ -199,12 +215,32 @@ p {
 
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  min-height: auto;
   padding: 70px 0 48px;
-  background:
-    linear-gradient(90deg, rgba(11, 17, 23, 0.96), rgba(11, 17, 23, 0.66), rgba(11, 17, 23, 0.92)),
-    url("../assets/images/hero-bg.webp") center/cover no-repeat,
-    var(--color-bg-secondary);
+  background: var(--color-bg-secondary);
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(11, 17, 23, 0.72), rgba(11, 17, 23, 0.68), rgba(11, 17, 23, 0.90));
+  content: "";
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% center;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-grid {
@@ -232,6 +268,7 @@ p {
 .doc-grid {
   display: grid;
   gap: 14px;
+  min-width: 0;
 }
 
 .info-card,
@@ -247,6 +284,7 @@ p {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: rgba(22, 33, 45, 0.92);
+  min-width: 0;
 }
 
 .info-card,
@@ -264,6 +302,15 @@ p {
   align-items: flex-start;
 }
 
+.info-card > *,
+.service-card > *,
+.task-card > *,
+.doc-card > *,
+.case-card > * {
+  max-width: 100%;
+  min-width: 0;
+}
+
 .icon {
   width: 24px;
   height: 24px;
@@ -272,6 +319,25 @@ p {
 
 .service-list {
   columns: 1;
+}
+
+.section-media {
+  margin-top: 28px;
+}
+
+.section-media img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  max-height: 520px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.section-media figcaption {
+  margin-top: 10px;
+  color: var(--color-text-muted);
+  font-size: 14px;
 }
 
 .service-list li,
